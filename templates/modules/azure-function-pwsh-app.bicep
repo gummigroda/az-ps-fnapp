@@ -125,6 +125,8 @@ resource funcApp 'Microsoft.Web/sites@2022-03-01' = {
       WEBSITE_RUN_FROM_PACKAGE: '1'
       AppSettingDummySecret: 'This_Secret_Is_Stored_In_AppSettings'
       KeyVaultDummySecret: '@Microsoft.KeyVault(SecretUri=${keyVault::KeyVaultDummySecret.properties.secretUri})'
+      Function_GetSettings_Uri: 'https://${funcApp.properties.defaultHostName}/api/getSettings'
+      Function_GetSettings_Code: 'Change this to reference the secret for the function getSettings'
     }
   }
   resource repo 'sourcecontrols@2022-09-01' = if (!empty(gitRepoUrl)) {

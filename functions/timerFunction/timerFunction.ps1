@@ -12,8 +12,8 @@ if ($Timer.IsPastDue) {
 # Write an information log with the current time.
 Write-Host "PowerShell timer trigger function ran! TIME: $currentUTCtime"
 
+$uri = ("{0}?code={1}" -f $env:Function_GetSettings_Uri, $env:Function_GetSettings_Code)
 
-$uri = $env:Function_GetSettings_Uri
 try {
     Invoke-RestMethod -Method Get -Uri $uri
 }
