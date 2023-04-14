@@ -1,0 +1,13 @@
+
+# Azure Functions artifacts
+functions/bin
+functions/obj
+functions/appsettings.json
+functions/local.settings.json
+
+# Azurite artifacts
+functions/__blobstorage__
+functions/__queuestorage__
+functions/__azurite_db*__.json
+
+.DS_Store
